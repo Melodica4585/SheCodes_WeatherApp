@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/d7147f28f7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+    <h1>Weather App</h1>
+
+    <form id="weather-form">
+        <input class="input"
+        type="text" 
+        placeholder="Enter your city"
+        autocomplete="off" 
+        autofocus="on"
+        id="city"
+    /> <br>
+
+    <div class="buttons">
+    <input class="button" 
+    type="submit" 
+    value="Submit"
+    id="searchButton">
+
+    <input class="current" 
+    type="button" 
+    value="Current"
+    id="submitButton">
+    </div>
+
+    </form>
+
+    <section class="current_data">
+    <div class="current_item">
+        <h2 class="data" id="searchCity">Gdańsk</h2>
+        <p class="date">Saturday</p>
+    </div>
+    <div class="current_item">
+        <h2 class="grades">
+            <span id="gradnow">9</span>
+            <a class="celsius-link" href="#" id="celsius">°C</a>
+        /
+            <a class="fahrenheit-link" href="#" id="fahrenheit">°F</a>
+        </h2>
+        <em><p id="current_precipitation">Drizzle</p></em>
+    </div>
+    <div class="current_item">
+        <ul class="extra">
+        <li class="humidity">
+            <span>Precipitation: </span> &nbsp
+            <p id="current_sky">95</p>
+            <span>%</span>
+        </li>
+        <li class="wind">
+            <span>Wind:</span> &nbsp
+            <p id="current_wind">7</p>&nbsp
+            <span>km/h</span>
+        </li>
+    </ul>
+    </div>
+    </section>
+
+    <section class="forecast">
+<ul class="week">
+    <li class="days">
+        <h3>Sunday</h3>
+        <p class="days_forecast">
+        4°C / 10°C </p>
+        <i class="fa-solid fa-cloud weather-icon"></i> 
+
+    </li>
+    <li class="days">
+        <h3>Monday</h3>
+        <p class="days_forecast">
+        3°C / 9°C </p>
+        <i class="fa-solid fa-cloud-sun weather-icon"></i>
+    
+    </li>
+    <li class="days">
+        <h3>Tuesday</h3>
+        <p class="days_forecast">
+        3°C / 9°C </p>
+        <i class="fa-solid fa-cloud weather-icon"></i> 
+    
+    </li>
+    <li class="days">
+        <h3>Wednesday</h3>
+        <p class="days_forecast">
+        6°C / 12°C </p>
+        <i class="fa-solid fa-cloud weather-icon"></i>
+    
+    </li>
+    <li class="days">
+        <h3>Thursday</h3>
+        <p class="days_forecast">
+        4°C / 9°C </p>
+        <i class="fa-solid fa-cloud-sun-rain weather-icon"></i>
+    </li>
+</ul>
+    </section>
+<footer>Coded by Anastasiia Khalupska</footer>
+</div>
+
+<script src="src/index.js"></script>
+
+</body>
+</html>

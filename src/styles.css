@@ -1,0 +1,200 @@
+body {
+    font-family: 'Montserrat';
+    color:rgb(19, 44, 51);
+    margin: 0;
+}
+
+.container {
+    width: 768px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgb(214, 239, 247);
+    padding: 20px;
+    background-image: url(../images/Weather_Two_Color.png), url(../images/Weather_Isometric.png); 
+    background-repeat: no-repeat;
+    background-position: top left 50px, top right 40px;
+    background-size: 180px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    color:rgb(24, 91, 109);
+    font-family: 'Literata';
+    margin-top: 15px;
+}
+
+h2 {
+    font-family: inherit;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color:rgb(75, 160, 183);
+}
+
+.grades {
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-family: inherit;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 7px;
+}
+
+p {
+    text-align: left;
+    margin: 0;
+}
+
+footer {
+    color:rgb(93, 158, 188);
+    margin-top: 50px;
+}
+
+.current_data {
+    margin: 50px 0px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.current_item {
+    display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	flex: 1;
+}
+
+.current_item:nth-child(2) {
+    align-items: center;
+}
+
+.current_item:nth-child(2n+1) {
+    margin-left: 10%;
+}
+
+.extra {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px;
+}
+
+.humidity, .wind {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.humidity {
+    margin-bottom: 15px;
+}
+
+.week {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+}
+
+.days {
+    display: flex;
+    flex-direction: column;
+	flex-basis: 100%;
+    flex: 1;
+    align-items: center;
+}
+
+.days_forecast {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 215px;
+    margin: auto;
+}
+
+.button, .current {
+    margin-top: 20px;
+    background: white;
+    cursor: pointer;
+    padding: 7px 12px;
+    text-align: center;
+    border: 1.5px solid rgb(36, 62, 69);
+    box-shadow: 3px 4px 3px 1px rgba(123, 119, 119, 0.2);
+    font-weight: 700;
+    font-size: 18px;
+    color: rgb(36, 62, 69);
+    border-radius: 5px;
+    transition: all 200ms ease-in-out;
+}
+
+.button:hover {
+    background: rgb(24, 91, 109);
+    color: white;
+}
+
+.current {
+    background: rgb(24, 91, 109);
+    color: white;
+}
+
+.current:hover {
+    background: white;
+    color: rgb(36, 62, 69);
+}
+
+.input {
+    border: 1.5px solid rgb(36, 62, 69);
+    padding: 15px;
+    width: 240px;
+    box-shadow: 3px 4px 3px 1px rgba(123, 119, 119, 0.2);
+    border-radius: 5px;
+}
+
+.weather-icon {
+    color:rgb(25, 36, 41);
+    font-size: 25px;
+}
+
+.rain-icon {
+    color:rgb(25, 36, 41);
+    font-size: 30px;
+}
+
+.weather-icon:hover, .rain-icon:hover {
+    color:rgb(75, 160, 183);
+}
+
+.fahrenheit-link, .celsius-link {
+    color: inherit;
+}
+
+.date {
+    line-height: 1.5;
+}
+
+.data {
+    margin-bottom: 15px;
+}
+
+#current_precipitation {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 22px;
+}
