@@ -58,8 +58,16 @@ p {
 }
 
 footer {
-    color:rgb(93, 158, 188);
+    color:rgb(19, 44, 51);
     margin-top: 50px;
+}
+
+.footer-link {
+    color:rgb(93, 158, 188);
+}
+
+.footer-link:hover {
+    color: rgb(24, 91, 109);
 }
 
 .current_data {
