@@ -60,26 +60,6 @@ function search(event) {
 }
 searchButton.addEventListener("click", search);
 
-//Celsius to Fahrenheit
-
-function changeFahrenheit(event) {
-    event.preventDefault();
-    let tempElement = document.querySelector("#gradnow");
-    tempElement.innerHTML = "48.2";
-}
-
-function changeCelsius(event) {
-    event.preventDefault();
-    let tempElement = document.querySelector("#gradnow");
-    tempElement.innerHTML = "9";
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", changeFahrenheit);
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", changeCelsius);
-
-
 //Current weather
 
 function showWeather(response) {
@@ -90,15 +70,21 @@ function showWeather(response) {
     let temperature = Math.round(response.data.main.temp);
     let span = document.querySelector("#gradnow");
     span.innerHTML = `${temperature}`;
+    celsiusTemperature = Math.round(response.data.main.temp);
 
     console.log(response.data);
-    document.querySelector("#current_precipitation").innerHTML =
-    response.data.weather[0].main;
+    document.querySelector("#current_precipitation").innerHTML = response.data.weather[0].main;
     document.querySelector("#current_sky").innerHTML = response.data.main.humidity;
     document.querySelector("#current_wind").innerHTML = Math.round(
     response.data.wind.speed
     );
-}
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute(
+        "src",
+        `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+        );
+    iconElement.setAttribute("alt", response.data.weather[0].main);
+    }
 
 function searchCity(city) {
     const apiKey = "e0b94a510e1371db880f85653a8e84fe";
@@ -134,3 +120,28 @@ let currentForm = document.querySelector("#submitButton");
 currentForm.addEventListener("click", getCurrentLocation);
 
 searchCity("New York");
+
+//Celsius to Fahrenheit
+
+function displayFahrenheitTemperature(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#gradnow");
+    let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+    event.preventDefault();
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    let temperatureElement = document.querySelector("#gradnow");
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);

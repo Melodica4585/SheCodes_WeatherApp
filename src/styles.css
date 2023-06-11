@@ -8,12 +8,14 @@ body {
     width: 768px;
     margin: 0 auto;
     text-align: center;
-    background: rgb(214, 239, 247);
+    background: rgb(204, 235, 245);
     padding: 20px;
     background-image: url(../images/Weather_Two_Color.png), url(../images/Weather_Isometric.png); 
     background-repeat: no-repeat;
     background-position: top left 50px, top right 40px;
     background-size: 180px;
+    border: 1px solid rgb(24, 91, 109);
+    border-radius: 10px;
 }
 
 ul {
@@ -71,7 +73,8 @@ footer {
 }
 
 .current_data {
-    margin: 50px 0px;
+    margin: 50px 0px 45px;
+    padding: 20px 0 20px;
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -189,8 +192,15 @@ footer {
     color:rgb(75, 160, 183);
 }
 
-.fahrenheit-link, .celsius-link {
+.gradnow {
+    font-size: 30px;
+}
+
+.fahrenheit-link, .celsius-link, .mark {
     color: inherit;
+    position: relative;
+    font-size: 18px;
+    top: -4.5px;
 }
 
 .date {
@@ -198,11 +208,16 @@ footer {
 }
 
 .data {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 #current_precipitation {
     font-family: inherit;
     font-weight: 700;
     font-size: 22px;
+    text-align: center;
+}
+
+#current_precipitation::first-letter {
+    text-transform: capitalize;
 }
