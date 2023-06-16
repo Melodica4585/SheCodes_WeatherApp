@@ -61,7 +61,7 @@ p {
 
 footer {
     color:rgb(19, 44, 51);
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .footer-link {
@@ -73,7 +73,7 @@ footer {
 }
 
 .current_data {
-    margin: 50px 0px 45px;
+    margin: 50px 0px 25px;
     padding: 20px 0 20px;
     display: flex;
     width: 100%;
@@ -109,26 +109,6 @@ footer {
 }
 
 .humidity {
-    margin-bottom: 15px;
-}
-
-.week {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: start;
-}
-
-.days {
-    display: flex;
-    flex-direction: column;
-	flex-basis: 100%;
-    flex: 1;
-    align-items: center;
-}
-
-.days_forecast {
-    text-align: center;
     margin-bottom: 15px;
 }
 
@@ -220,4 +200,17 @@ footer {
 
 #current_precipitation::first-letter {
     text-transform: capitalize;
+}
+
+.weather-forecast-date {
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+.weather-forecast-temperature-min {
+    opacity: 0.7;
+}
+
+.weather-forecast-temperatures {
+    font-size: 16px;
 }
