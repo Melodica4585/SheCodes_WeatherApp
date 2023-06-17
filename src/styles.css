@@ -1,7 +1,8 @@
 body {
     font-family: 'Montserrat';
     color:rgb(19, 44, 51);
-    margin: 0;
+    margin: 15px;
+    background-color: rgb(116, 155, 164);
 }
 
 .container {
@@ -74,7 +75,7 @@ footer {
 
 .current_data {
     margin: 40px 0px 0px;
-    padding: 20px 0 20px;
+    padding: 10px 0 10px;
     display: flex;
     width: 100%;
     flex-direction: row;
