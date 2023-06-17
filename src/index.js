@@ -52,7 +52,7 @@ p_class.innerHTML = `${day} <br> ${month} ${date} <br> ${hours}:${minutes}`;
 function formatDay(timestamp) {
     let date = new Date(timestamp * 1000);
     let day = date.getDay();
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
     return days[day];
 }
@@ -105,7 +105,8 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
     console.log(coordinates);
-    let apiKey = "e0b94a510e1371db880f85653a8e84fe";
+    let apiKey = "311f1f45fee82242ab4086372ab360f5";
+    let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unites=${units}`;
     axios.get(apiUrl).then(displayForecast);
 }
@@ -126,8 +127,7 @@ function showWeather(response) {
     document.querySelector("#current_precipitation").innerHTML = response.data.weather[0].main;
     document.querySelector("#current_sky").innerHTML = response.data.main.humidity;
     document.querySelector("#current_wind").innerHTML = Math.round(
-    response.data.wind.speed
-    );
+    response.data.wind.speed);
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute(
         "src",
@@ -135,7 +135,7 @@ function showWeather(response) {
         );
     iconElement.setAttribute("alt", response.data.weather[0].main);
 
-    getForecast(response.data.coordinates);
+    getForecast(response.data.coord);
 
     }
 
